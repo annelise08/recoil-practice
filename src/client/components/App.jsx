@@ -1,10 +1,12 @@
 import React from "react";
+import MainContainer from "./containers/MainContainer";
+import { RecoilRoot } from "recoil";
 
 const App = () => {
     return (
-        <div>
-            <h1>Hello world!</h1>
-        </div>
+        <RecoilRoot>
+        <MainContainer />
+        </RecoilRoot>
     )
 }
 
