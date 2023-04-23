@@ -21,7 +21,8 @@ const AddMarket = () => {
   };
 
   // when add market button is clicked, we want to update marketListState atom
-  const handleClick = () => {
+  const handleClickAdd = () => {
+    // setMarketList is a setter function derived from using useRecoilState (reads state and gives us a setter function)
     setMarketList((oldMarketList) => [
       ...oldMarketList,
       {
@@ -38,7 +39,7 @@ const AddMarket = () => {
   return (
     <div>
       <input type="text" value={market} onChange={onChange} />
-      <button onClick={handleClick}>Add market</button>
+      <button onClick={handleClickAdd}>Add market</button>
     </div>
   );
 };

@@ -12,6 +12,7 @@ const MarketsContainer = () => {
     <>
       <div>Markets Container</div>
       <AddMarket />
+      {/* mapping array of market jsx elements from market list */}
       {MarketList.map((market) => (
         <Market location = {market.location} key={market.id} id={market.id}/>
       ))}
