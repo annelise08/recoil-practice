@@ -8,6 +8,7 @@ const AddMarket = () => {
   // should return a form with an input label
   // on change, form should update the markets container state
   const [market, setMarket] = useState("");
+  const [zip, setZip] = useState("");
 
   // get marketlist from atom
   const [marketList, setMarketList] = useRecoilState(marketListState);
@@ -16,9 +17,13 @@ const AddMarket = () => {
   const [locationId, setLocationId] = useRecoilState(locationIdState);
 
   // function to update state based on input field
-  const onChange = (e) => {
+  const onChangeLocation = (e) => {
     setMarket(e.target.value);
   };
+
+  const onChangeZip = (e) => {
+    setZip(e.target.value);
+  }
 
   // when add market button is clicked, we want to update marketListState atom
   const handleClickAdd = () => {
@@ -27,7 +32,8 @@ const AddMarket = () => {
       ...oldMarketList,
       {
         location: market,
-        id: locationId
+        id: locationId,
+        zip: zip
       },
     ]);
     // reset market to empty string
@@ -38,7 +44,8 @@ const AddMarket = () => {
 
   return (
     <div>
-      <input type="text" value={market} onChange={onChange} />
+      <input type="text" value={market} onChange={onChangeLocation} placeholder="Location"/>
+      <input type="text" value={zip} onChange={onChangeZip} placeholder="Zipcode" />
       <button onClick={handleClickAdd}>Add market</button>
     </div>
   );

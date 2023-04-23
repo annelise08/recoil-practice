@@ -12,3 +12,13 @@ export const locationIdState = atom({
   key: "LocationId",
   default: 0
 })
+
+export const marketListFilterState = atom({
+  key: "MarketListFilter",
+  default: "Show all"
+})
+
+export const zipFilterState = atom ({
+  key: "Zip",
+  default: ''
+})

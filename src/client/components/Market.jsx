@@ -19,7 +19,6 @@ const Market = (props) => {
                 }
             }
         })
-        
     }
 
     return (
@@ -27,6 +26,7 @@ const Market = (props) => {
         <div className="market">
             <div>Location: {props.location}</div>
             <div>ID: {props.id}</div>
+            <div>Zipcode: {props.zip}</div>
             <button onClick={() => handleClick(props.id)}>Delete market</button>
         </div>
         </>
