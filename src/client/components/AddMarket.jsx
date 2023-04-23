@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { atom, useRecoilValue, useRecoilState } from "recoil";
-import { marketListState } from "./atoms";
+import { marketListState, locationIdState } from "./Atoms.jsx";
 
 // want add market to update state for all markets based on input
 const AddMarket = () => {
@@ -11,6 +11,9 @@ const AddMarket = () => {
 
   // get marketlist from atom
   const [marketList, setMarketList] = useRecoilState(marketListState);
+
+  // get current location id from atom
+  const [locationId, setLocationId] = useRecoilState(locationIdState);
 
   // function to update state based on input field
   const onChange = (e) => {
@@ -23,10 +26,13 @@ const AddMarket = () => {
       ...oldMarketList,
       {
         location: market,
+        id: locationId
       },
     ]);
     // reset market to empty string
     setMarket("");
+    // reset locationId atom, increasing it by 1
+    setLocationId((oldId) => oldId + 1);
   };
 
   return (

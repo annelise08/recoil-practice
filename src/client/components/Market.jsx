@@ -4,7 +4,10 @@ import React from "react";
 const Market = (props) => {
     return (
         <>
-        <div className="market">Location: {props.location}</div>
+        <div className="market">
+            <div>Location: {props.location}</div>
+            <div>ID: {props.id}</div>
+        </div>
         </>
     )
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { atom, useRecoilValue } from "recoil";
 import AddMarket from "../AddMarket";
-import { marketListState } from "../atoms";
+import { marketListState } from "../Atoms";
 import Market from "../Market";
 
 const MarketsContainer = () => {
@@ -13,7 +13,7 @@ const MarketsContainer = () => {
       <div>Markets Container</div>
       <AddMarket />
       {MarketList.map((market) => (
-        <Market location = {market.location}/>
+        <Market location = {market.location} key={market.id} id={market.id}/>
       ))}
     </>
   );
